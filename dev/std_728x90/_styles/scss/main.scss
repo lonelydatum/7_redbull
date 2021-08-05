@@ -1,0 +1,29 @@
+@import '../../../_common/styles/common.scss';
+
+.frame1{
+	// opacity: 1;
+}
+
+#banner {
+	width: 728px;
+	height: 90px;
+}
+
+.t1{
+	transform-origin: 1000px 90px;
+	@include pos-scale(-500, -45, .5);
+}
+
+.t2a{
+	transform-origin: 1000px 90px;
+	@include pos-scale(-500, -45, .5);
+}
+
+.t2b{
+	transform-origin: 1000px 90px;
+	@include pos-scale(-500, -45, .5);
+}
+
+.smoke{
+	@include pos-scale(80, -220, .3);
+}

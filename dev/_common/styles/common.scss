@@ -125,3 +125,10 @@ sup{
 	opacity: .5;
 	background: linear-gradient(0deg, rgba(0, 0, 0, 0.6) 4%, rgba(0, 0, 0, 0) 52%);
 }
+
+.smoke{
+	// opacity: 0;
+	mix-blend-mode: multiply;
+	transform-origin: 50% 100%;
+	
+}

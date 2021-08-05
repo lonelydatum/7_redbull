@@ -18,11 +18,34 @@ function init() {
 
 	tl.set(".frame1", { opacity: 1 });
 
+	TweenLite.defaultEase = Back.easeOut;
+	tl.from(".t1", .3, { scale: .3, opacity: 0 }, .5);
+	tl.to(".t1", .1, { opacity: 0 }, "+=2");
+
+	tl.from(".t2a", .3, { scale: .3, opacity: 0 }, "+=.2");
+	tl.from(".t2b", .3, { scale: .3, opacity: 0 }, "+=1");
+
+	var total = 6;
+	for (var i = 1; i <= total; i++) {
+		makeSmoke(".smoke" + i, i / total);
+	}
+
 	return tl;
+}
+
+function makeSmoke(id, delay) {
+	var scale = arguments.length <= 2 || arguments[2] === undefined ? 1 : arguments[2];
+
+	var smoke = new TimelineMax({ repeat: 1 });
+	var time = 2.5;
+	smoke.fromTo(id, time, { scale: 0, opacity: .8 }, { scale: scale, opacity: 0 }, delay * time);
+
+	return smoke;
 }
 
 exports.size = size;
 exports.init = init;
+exports.makeSmoke = makeSmoke;
 
 },{}],2:[function(require,module,exports){
 'use strict';
@@ -30,8 +53,6 @@ exports.init = init;
 var _commonJsCommonJs = require('../../_common/js/common.js');
 
 var tl = (0, _commonJsCommonJs.init)();
-
-module.exports = {};
 
 },{"../../_common/js/common.js":1}]},{},[2])
 

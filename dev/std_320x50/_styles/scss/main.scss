@@ -1,0 +1,30 @@
+@import '../../../_common/styles/common.scss';
+
+.frame1{
+	// opacity: 1;
+}
+
+#banner {
+	width: 320px;
+	height: 50px;
+}
+
+.t1{
+	transform-origin: 320px 50px;
+	@include pos-scale(-160, -25, .5);
+}
+
+.t2a{
+	transform-origin: 320px 50px;
+	@include pos-scale(-160, -25, .5);
+}
+
+.t2b{
+	transform-origin: 320px 50px;
+	@include pos-scale(-160, -25, .5);
+}
+
+.smoke{
+	@include pos-scale(70, 60, .5);
+	display: none;
+}
