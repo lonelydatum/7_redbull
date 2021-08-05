@@ -25,5 +25,6 @@
 }
 
 .smoke{
-	@include pos-scale(80, -220, .3);
+	// opacity: .2;
+	@include pos-scale(150, -180, .2);
 }

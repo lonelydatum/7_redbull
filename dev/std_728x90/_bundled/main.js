@@ -14,7 +14,7 @@ var h = size.h;
 
 function init() {
 
-	var tl = new TimelineMax({ onComplete: function onComplete() {} });
+	var tl = new TimelineMax();
 
 	tl.set(".frame1", { opacity: 1 });
 
@@ -25,22 +25,33 @@ function init() {
 	tl.from(".t2a", .3, { scale: .3, opacity: 0 }, "+=.2");
 	tl.from(".t2b", .3, { scale: .3, opacity: 0 }, "+=1");
 
-	var total = 6;
+	var total = 5;
 	for (var i = 1; i <= total; i++) {
-		makeSmoke(".smoke" + i, i / total);
+		makeSmoke(".smoke" + i, (i - 1) / total);
 	}
 
 	return tl;
 }
 
+function rand(min, max) {
+	var diff = max - min;
+	return min + Math.random() * diff;
+}
+
 function makeSmoke(id, delay) {
-	var scale = arguments.length <= 2 || arguments[2] === undefined ? 1 : arguments[2];
+	var scale = arguments.length <= 2 || arguments[2] === undefined ? .6 : arguments[2];
 
-	var smoke = new TimelineMax({ repeat: 1 });
-	var time = 2.5;
-	smoke.fromTo(id, time, { scale: 0, opacity: .8 }, { scale: scale, opacity: 0 }, delay * time);
+	var smoke = new TimelineMax({ repeat: 0 });
+	var time1 = .7;
+	var time2 = .1;
 
-	return smoke;
+	var d = delay * (time1 + time2);
+
+	var rotate = rand(-20, 20);
+
+	var y = rand(0, 30);
+	smoke.fromTo(id, time1, { scale: .1, opacity: 0 }, { y: "-=" + y, rotation: "+=" + rotate, scale: "+=" + scale, opacity: .4, x: "+=70", ease: Back.easeOut }, d);
+	smoke.to(id, time2, { opacity: 0, ease: Linear.easeNone });
 }
 
 exports.size = size;
@@ -67,9 +78,9 @@ function init() {
 
 	tl.from(".t2b", .3, { scale: .3, opacity: 0 }, "+=.1");
 
-	var total = 6;
+	var total = 5;
 	for (var i = 1; i <= total; i++) {
-		(0, _commonJsCommonJs.makeSmoke)(".smoke" + i, i / total, .4);
+		(0, _commonJsCommonJs.makeSmoke)(".smoke" + i, i / total, .15);
 	}
 
 	return tl;

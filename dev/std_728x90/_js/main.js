@@ -19,9 +19,9 @@ function init(){
 
 
 
-	const total = 6
+	const total = 5
 	for(let i=1; i<=total; i++){
-		makeSmoke(".smoke"+i, i/total, .4)	
+		makeSmoke(".smoke"+i, i/total, .15)	
 	}
 
 

@@ -128,7 +128,7 @@ sup{
 
 .smoke{
 	// opacity: 0;
-	mix-blend-mode: multiply;
-	transform-origin: 50% 100%;
+	mix-blend-mode: exclusion;
+	transform-origin: 0% 100%;
 	
 }

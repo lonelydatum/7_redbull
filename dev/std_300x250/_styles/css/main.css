@@ -171,10 +171,10 @@ sup {
 }
 
 .smoke {
-  mix-blend-mode: multiply;
-  -webkit-transform-origin: 50% 100%;
-  -ms-transform-origin: 50% 100%;
-  transform-origin: 50% 100%;
+  mix-blend-mode: exclusion;
+  -webkit-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
 }
 
 #banner {
@@ -225,9 +225,9 @@ sup {
 }
 
 .smoke {
-  -webkit-transform: translate(80px, -90px) scale(0.5, 0.5);
-  -ms-transform: translate(80px, -90px) scale(0.5, 0.5);
-  transform: translate(80px, -90px) scale(0.5, 0.5);
+  -webkit-transform: translate(164px, -80px) scale(0.43, 0.43);
+  -ms-transform: translate(164px, -80px) scale(0.43, 0.43);
+  transform: translate(164px, -80px) scale(0.43, 0.43);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
